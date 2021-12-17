@@ -1,0 +1,12 @@
+{
+	"name": "pin words",
+	"manifest_version": 3,
+	"version": "0.1.0",
+	"permissions": ["activeTab","scripting","contextMenus","storage"],
+	"background": {
+		"service_worker": "index.js"
+	},
+	"action": {
+        "default_popup": "index.html"
+    }
+}
