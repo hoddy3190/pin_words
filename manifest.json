@@ -2,7 +2,7 @@
 	"name": "pin words",
 	"manifest_version": 2,
 	"version": "0.1.0",
-	"permissions": ["activeTab","scripting","contextMenus","storage","identity"],
+	"permissions": ["contextMenus","identity"],
 	"background": {
         "page": "background.html",
         "persistent": false
