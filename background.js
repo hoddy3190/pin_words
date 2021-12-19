@@ -33,20 +33,18 @@ function onClickPinWord(info) {
       // eslint-disable-next-line no-undef
       gapi.client.sheets.spreadsheets.values.append({
         spreadsheetId: SPREADSHEET_ID,
-        range: SPREADSHEET_TAB_NAME,
+        range: SPREADSHEET_TAB_NAME, // シート内でtableをよしなに見つけてその一番下に挿入する
         valueInputOption: 'USER_ENTERED',
-        resource: {
-          values: [
-            ['', info.selectionText, info.pageUrl]
-          ]
-        },
-      // eslint-disable-next-line no-unused-vars
+        insertDataOption: 'INSERT_ROWS',
+        values: [
+            [info.selectionText, info.pageUrl]
+        ],
       }).then(function(response) {
-        console.log('success')
+        console.log(response.result);
       });
     })
   }, function(error) {
-    alert(error);
+    alert('error' + error.result.error.message);
   });
 }
 
