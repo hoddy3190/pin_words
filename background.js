@@ -37,7 +37,10 @@ function onClickPinWord(info) {
         valueInputOption: 'USER_ENTERED',
         insertDataOption: 'INSERT_ROWS',
         values: [
-            [info.selectionText, info.pageUrl]
+            // urlはinfo.pageUrlで指定することもできるがその場合、
+            // pdfを開いたページだと、chrome-extension://dnclbikcihnpjohihfcmmldgkjnebgnj/options/pdf/web/viewer.html
+            // となってしまうため、window.location.hrefで指定することにした
+            [info.selectionText, window.location.href]
         ],
       }).then(function(response) {
         console.log(response.result);
