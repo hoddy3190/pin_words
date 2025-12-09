@@ -44,6 +44,7 @@ function onClickPinWord(info) {
       });
     })
   }, function(error) {
+    console.log('error');
     alert('error' + error.result.error.message);
   });
 }
